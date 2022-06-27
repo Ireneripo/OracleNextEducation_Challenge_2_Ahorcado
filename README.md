@@ -14,4 +14,4 @@ Requisitos:
 Extras:
 - La página debe tener un campo para inserción de texto con la finalidad de adicionar nuevas palabras al juego, e un botón "Agregar palabra".
 
-Test the app here: 
+Test the app here: https://ireneripo.github.io/OracleNextEducation_Challenge_2_Ahorcado/
