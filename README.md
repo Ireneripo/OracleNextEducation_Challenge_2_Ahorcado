@@ -1,6 +1,7 @@
 # OracleNextEducation_Challenge_2_Ahorcado
 
 Requisitos:
+
 - Debe funcionar sólo con letras mayúsculas.
 - No deben ser utilizadas letras con acentos ni caracteres especiales.
 - Al completar o dibujo de la horca, debe ser mostrado un mensaje "Fin del juego" en la pantalla.
@@ -12,6 +13,9 @@ Requisitos:
 - Las letras correctas deben aparecer en la pantalla encima de los guiones, en la posición correcta en relación a la palabra.
 
 Extras:
+
 - La página debe tener un campo para inserción de texto con la finalidad de adicionar nuevas palabras al juego y un botón "Agregar palabra".
 
 Test the app here: https://ireneripo.github.io/OracleNextEducation_Challenge_2_Ahorcado/
+
+#challengeonejuegoahorcado2
