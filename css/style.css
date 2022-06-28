@@ -1,9 +1,12 @@
 body {
   font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
 }
 
 .logo {
-  margin: 10px;
+  margin: 8px;
+  width: 100px;
+  height: auto;
 }
 
 .main-buttons {
@@ -19,31 +22,72 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: bolder;
   border: none;
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 24px;
   -webkit-box-shadow: 7px 7px 10px -3px rgba(28, 28, 28, 0.68);
   box-shadow: 7px 7px 10px -3px rgba(28, 28, 28, 0.68);
 }
 
-.start,
-.save,
-.new-game {
+.start {
   width: 317px;
   height: 105px;
   left: 29px;
   top: 281px;
   padding: 24px;
   margin-bottom: 20px;
-  background-color: #a61143;
+  background-color: #0a3871;
   border: none;
   color: #ffffff;
 }
 
-.new-word,
-.cancel,
-.give-up {
+.new-word {
   width: 250px;
-  background-color: #e0e0e0;
+  background-color: #ffffff;
   padding: 25px;
   margin-bottom: 20px;
+}
+
+.save,
+.cancel,
+.new-game,
+.give-up {
+  width: 317px;
+  padding: 25px;
+  margin-bottom: 20px;
+}
+
+.save,
+.new-game {
+  background-color: #0a3871;
+  color: #ffffff;
+}
+
+.cancel,
+.give-up {
+  background-color: #ffffff;
+}
+
+.input-area {
+  margin: auto;
+  border: none;
+
+  outline: 0;
+}
+
+/* Media queries */
+/* Tablet */
+
+@media screen and (min-width: 768px) {
+  .main-buttons {
+    width: 60%;
+  }
+  .main-buttons-game,
+  .main-buttons-word {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .my-button-game,
+  .my-button-word {
+    width: 45%;
+  }
 }
