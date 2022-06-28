@@ -69,28 +69,54 @@ body {
 }
 
 .input-area {
-  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.input-textarea {
+  line-height: 150px;
+  width: 70%;
+  height: 150px;
+  resize: none;
+  margin-bottom: 3%;
   border: none;
-  background-color: #8a8c54;
+  background-color: #ebebe1;
+  color: #4d6749;
   outline: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: bolder;
+  font-size: 30px;
+  overflow: scroll;
+  text-align: center;
 }
 
 /* Media queries */
 /* Tablet */
 
 @media screen and (min-width: 768px) {
+  .input-textarea {
+    width: 45%;
+  }
+
   .main-buttons-game,
   .main-buttons-word {
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
   }
   .my-button-game,
   .my-button-word {
-    width: 45%;
+    width: 44%;
   }
 }
 
-@media screen and (min-width: 768px) {
-  /* .main-buttons {
-  } */
+/* Desktop */
+@media screen and (min-width: 1440px) {
+  .input-textarea {
+    width: 35%;
+  }
+
+  .main-buttons-game,
+  .main-buttons-word {
+    max-width: 50%;
+  }
 }

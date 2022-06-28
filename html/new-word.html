@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/css/reset.css" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
@@ -17,13 +18,17 @@
       </a>
     </header>
     <main>
-      <textarea name="new-word" id="new-word" cols="50" rows="10" class="input-area"></textarea>
+      <div class="input-area">
+        <textarea name="new-word" id="new-word" cols="60" rows="20" class="input-textarea" autofocus></textarea>
+      </div>
+
       <div class="main-buttons main-buttons-word">
         <button class="save my-button my-button-word">Guardar y empezar</button>
-        <button class="cancel my-button my-button-word">Cancelar</button>
+        <a href="/index.html"><button class="cancel my-button my-button-word">Cancelar</button></a>
       </div>
     </main>
     <footer>
+      <a href="https://github.com/Ireneripo"><i class="fa-brands fa-github"></i></a>
       <a href="https://www.vecteezy.com/?utm_source=vecteezy-download&utm_medium=license-info-pdf&utm_campaign=license-info-document">Image credits: Vecteezy</a>
     </footer>
     <script src="/js/app.js"></script>
