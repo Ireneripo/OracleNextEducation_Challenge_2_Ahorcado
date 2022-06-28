@@ -12,10 +12,9 @@ body {
 .main-buttons {
   width: 100%;
   margin: auto;
-  margin-top: 50%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .my-button {
@@ -35,16 +34,17 @@ body {
   top: 281px;
   padding: 24px;
   margin-bottom: 20px;
-  background-color: #0a3871;
+  background-color: #4d6749;
   border: none;
   color: #ffffff;
 }
 
 .new-word {
   width: 250px;
-  background-color: #ffffff;
+  background-color: #8a8c54;
   padding: 25px;
   margin-bottom: 20px;
+  color: #ffffff;
 }
 
 .save,
@@ -54,23 +54,24 @@ body {
   width: 317px;
   padding: 25px;
   margin-bottom: 20px;
+  color: #ffffff;
 }
 
 .save,
 .new-game {
-  background-color: #0a3871;
+  background-color: #4d6749;
   color: #ffffff;
 }
 
 .cancel,
 .give-up {
-  background-color: #ffffff;
+  background-color: #8a8c54;
 }
 
 .input-area {
   margin: auto;
   border: none;
-
+  background-color: #8a8c54;
   outline: 0;
 }
 
@@ -78,9 +79,6 @@ body {
 /* Tablet */
 
 @media screen and (min-width: 768px) {
-  .main-buttons {
-    width: 60%;
-  }
   .main-buttons-game,
   .main-buttons-word {
     display: flex;
@@ -90,4 +88,9 @@ body {
   .my-button-word {
     width: 45%;
   }
+}
+
+@media screen and (min-width: 768px) {
+  /* .main-buttons {
+  } */
 }
