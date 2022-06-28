@@ -3,6 +3,11 @@ body {
   background-color: #ffffff;
 }
 
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 .logo {
   margin: 8px;
   width: 100px;
@@ -25,8 +30,13 @@ body {
   border-radius: 24px;
   -webkit-box-shadow: 7px 7px 10px -3px rgba(28, 28, 28, 0.68);
   box-shadow: 7px 7px 10px -3px rgba(28, 28, 28, 0.68);
+  cursor: pointer;
 }
 
+.my-button:hover {
+  transform: scale(1.03);
+  transition: 500ms;
+}
 .start {
   width: 317px;
   height: 105px;
