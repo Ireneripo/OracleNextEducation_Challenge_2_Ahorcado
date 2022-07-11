@@ -20,10 +20,30 @@
     </header>
     <main>
       <div class="main-buttons">
-        <a href="html/game.html"><button class="start my-button">Iniciar juego</button></a>
-
-        <a href="html/new-word.html"><button class="new-word my-button">Agregar nueva palabra</button></a>
+        <button type="button" id="start" class="start my-button">Iniciar juego</button>
+        <button type="button" class="new-word my-button">Agregar nueva palabra</button>
       </div>
+
+      
+      <div class="main-buttons main-buttons-game">
+        <button type="button" class="new-game my-button my-button-game">Nuevo juego</button>
+
+        <button type="button" class="give-up my-button my-button-game">Desistir</button>
+      </div>
+
+      <div>
+        <div class="input-area">
+          <textarea name="new-word" id="new-word" cols="60" rows="20" class="input-textarea" autofocus></textarea>
+        </div>
+  
+        <div class="main-buttons main-buttons-word">
+          <button type="button" class="save my-button my-button-word">Guardar y empezar</button>
+  
+          <button type="button" class="cancel my-button my-button-word">Cancelar</button>
+        </div>
+      </div>
+     
+    </main>
     </main>
     <footer>
       <a href="https://github.com/Ireneripo"><i class="fa-brands fa-github"></i></a>
