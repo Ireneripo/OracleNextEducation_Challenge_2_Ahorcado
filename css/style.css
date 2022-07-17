@@ -1,6 +1,51 @@
 body {
+  margin: 0;
+  background: url(/images/hangman_s_tree_by_avareonart_d8w0e6y.jpg) no-repeat center;
+  background-size: cover;
   font-family: 'Inter', sans-serif;
   background-color: #ffffff;
+}
+
+main {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  background-color: rgba(28, 28, 28, 0.68);
+  display: flex;
+  gap: 30px;
+}
+
+#hangman-image {
+  width: 300px;
+}
+
+#secret-word {
+  height: 3em;
+}
+
+#secret-word span {
+  vertical-align: bottom;
+  color: #ffffff;
+  font-size: 2em;
+  border-bottom: 2px solid #ffffff;
+  width: 30px;
+  text-align: center;
+  margin-right: 6px;
+  display: inline-block;
+  font-weight: bolder;
+}
+
+#letters {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+#letters button {
+  width: 28px;
+  padding: 6px 0;
+  text-align: center;
 }
 
 a {
@@ -44,14 +89,14 @@ a {
   top: 281px;
   padding: 24px;
   margin-bottom: 20px;
-  background-color: #4d6749;
+  background-color: #9c6b8a;
   border: none;
   color: #ffffff;
 }
 
 .new-word {
   width: 250px;
-  background-color: #8a8c54;
+  background-color: #9ea8ba;
   padding: 25px;
   margin-bottom: 20px;
   color: #ffffff;
@@ -69,13 +114,13 @@ a {
 
 .save,
 .new-game {
-  background-color: #4d6749;
+  background-color: #9c6b8a;
   color: #ffffff;
 }
 
 .cancel,
 .give-up {
-  background-color: #8a8c54;
+  background-color: #9ea8ba;
 }
 
 .input-area {
@@ -89,8 +134,8 @@ a {
   resize: none;
   margin-bottom: 3%;
   border: none;
-  background-color: #ebebe1;
-  color: #4d6749;
+  background-color: #9ea8ba;
+  color: #ffffff;
   outline: 0;
   font-family: 'Inter', sans-serif;
   font-weight: bolder;
