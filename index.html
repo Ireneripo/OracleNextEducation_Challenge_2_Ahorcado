@@ -18,53 +18,55 @@
         <img src="images/gallows-vector.jpg" alt="Image of a hangman" class="logo" />
       </a> -->
     </header>
-    <main>
-      <img id="hangman-image" src="images/img0.png" alt="Ahorcado">
-      <div>
-        <p id="secret-word"></p>
-
+    <main>  
+      <div id="main-area">
+        <img id="hangman-image" src="images/img0.png" alt="Ahorcado">
+        
         <div class="main-buttons">
+          <p id="secret-word"></p>
+          <p id="wrong-letter"></p>
           <button type="button" id="start" class="start my-button">Iniciar juego</button>
 
           <p id="result"></p>
 
           <button type="button" class="new-word my-button">Agregar nueva palabra</button>
+
+          <div id="letters">
+            <button>A</button>
+            <button>B</button>
+            <button>C</button>
+            <button>D</button>
+            <button>E</button>
+            <button>F</button>
+            <button>G</button>
+            <button>H</button>
+            <button>I</button>
+            <button>J</button>
+            <button>K</button>
+            <button>L</button>
+            <button>M</button>
+            <button>N</button>
+            <button>Ñ</button>
+            <button>O</button>
+            <button>P</button>
+            <button>Q</button>
+            <button>R</button>
+            <button>S</button>
+            <button>T</button>
+            <button>U</button>
+            <button>V</button>
+            <button>W</button>
+            <button>X</button>
+            <button>Y</button>
+            <button>Z</button>
+          </div>
         </div>
 
-        <div id="letters">
-          <button>A</button>
-          <button>B</button>
-          <button>C</button>
-          <button>D</button>
-          <button>E</button>
-          <button>F</button>
-          <button>G</button>
-          <button>H</button>
-          <button>I</button>
-          <button>J</button>
-          <button>K</button>
-          <button>L</button>
-          <button>M</button>
-          <button>N</button>
-          <button>Ñ</button>
-          <button>O</button>
-          <button>P</button>
-          <button>Q</button>
-          <button>R</button>
-          <button>S</button>
-          <button>T</button>
-          <button>U</button>
-          <button>V</button>
-          <button>W</button>
-          <button>X</button>
-          <button>Y</button>
-          <button>Z</button>
-        </div>
         
       </div>
             
 
-      <!-- <div class="main-buttons main-buttons-game">
+      <div class="main-buttons main-buttons-game">
         <button type="button" class="new-game my-button my-button-game">Nuevo juego</button>
 
         <button type="button" class="give-up my-button my-button-game">Desistir</button>
@@ -80,7 +82,7 @@
   
           <button type="button" class="cancel my-button my-button-word">Cancelar</button>
         </div>
-      </div> -->
+      </div>
      
     </main>
     </main>

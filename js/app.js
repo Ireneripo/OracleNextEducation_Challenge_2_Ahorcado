@@ -1,3 +1,5 @@
+// Global variables
+
 let word;
 let wrongAttempts = 0;
 let rightAttempts = 0;
@@ -51,12 +53,15 @@ const startBtn = document.getElementById('start');
 const hangmanImage = id('hangman-image');
 const letterBtn = document.querySelectorAll('#letters button');
 
+// Call to action when user clicks "Iniciar Juego", the game starts!
 startBtn.addEventListener('click', startGame);
 
+// Function to look for an element by its Id
 function id(str) {
   return document.getElementById(str);
 }
 
+// Function to start the game
 function startGame(event) {
   id('result').innerHTML = ``;
   hangmanImage.src = `images/img0.png`;
@@ -82,10 +87,12 @@ function startGame(event) {
   }
 }
 
+// Listening when the user clicks a letter
 for (let i = 0; i < letterBtn.length; i++) {
   letterBtn[i].addEventListener('click', clickLetter);
 }
 
+// Call to action: fill the empty space if the letter is correct and update counter and image. Show a message at the end of the game
 function clickLetter(event) {
   const spans = document.querySelectorAll('#secret-word span');
   const button = event.target;
@@ -107,19 +114,23 @@ function clickLetter(event) {
     const source = `images/img${wrongAttempts}.png`;
 
     hangmanImage.src = source;
+
+    // Write the wrong letter under the secret word
+    const wrongLetter = document.getElementById('wrong-letter');
+    const spanWrongLetter = document.createElement('span');
+    wrongLetter.appendChild(spanWrongLetter).innerHTML = letter;
   }
 
   if (wrongAttempts == 7) {
-    id('result').innerHTML = `Perdiste, la palabra era ${wordUpper}.`;
+    id('result').innerHTML = `Perdiste 🥺 la palabra era ${wordUpper}.`;
     gameOver();
   } else if (rightAttempts == wordUpper.length) {
-    id('result').innerHTML = 'GANASTE!!';
+    id('result').innerHTML = 'GANASTE!! 🥳';
     gameOver();
   }
-
-  console.log('La letra ' + letter + ' en la palabra ' + wordUpper + ', ¿existe?: ' + correctLetter);
 }
 
+// Function to enable/disable letters and Start button
 function gameOver() {
   for (let i = 0; i < letterBtn.length; i++) {
     letterBtn[i].disabled = true;
@@ -129,3 +140,9 @@ function gameOver() {
 }
 
 gameOver();
+
+// Function to add a word to the words array
+// function addWord(str) {
+
+//   if(str === )
+// }
