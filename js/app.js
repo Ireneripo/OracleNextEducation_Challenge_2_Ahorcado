@@ -50,11 +50,14 @@ let words = [
 ];
 
 const startBtn = document.getElementById('start');
+const newWordBtn = document.querySelector('.new-word');
 const hangmanImage = id('hangman-image');
 const letterBtn = document.querySelectorAll('#letters button');
+let paragraph;
 
 // Call to action when user clicks "Iniciar Juego", the game starts!
 startBtn.addEventListener('click', startGame);
+newWordBtn.addEventListener('click', giveUp);
 
 // Function to look for an element by its Id
 function id(str) {
@@ -63,13 +66,18 @@ function id(str) {
 
 // Function to start the game
 function startGame(event) {
+  startBtn.innerHTML = 'Iniciar juego';
   id('result').innerHTML = ``;
   hangmanImage.src = `images/img0.png`;
   startBtn.disabled = true;
+  startBtn.style.backgroundColor = '#ad9da8';
+  newWordBtn.innerHTML = 'Desistir';
+  newWordBtn.style.backgroundColor = '#77719a';
+
   wrongAttempts = 0;
   rightAttempts = 0;
 
-  const paragraph = id('secret-word');
+  paragraph = id('secret-word');
   paragraph.innerHTML = '';
 
   word = words[Math.floor(Math.random() * words.length)];
@@ -85,6 +93,14 @@ function startGame(event) {
     const span = document.createElement('span');
     paragraph.appendChild(span);
   }
+}
+
+// Function to give up a game
+function giveUp(event) {
+  newWordBtn.innerHTML = 'Agregar nueva palabra';
+  startBtn.disabled = false;
+  startBtn.style.backgroundColor = '#9c6b8a';
+  paragraph.innerHTML = '';
 }
 
 // Listening when the user clicks a letter
@@ -123,9 +139,18 @@ function clickLetter(event) {
 
   if (wrongAttempts == 7) {
     id('result').innerHTML = `Perdiste 🥺 la palabra era ${wordUpper}.`;
+
+    startBtn.innerHTML = 'Nuevo juego';
+    startBtn.style.backgroundColor = '#9c6b8a';
+
+    newWordBtn.innerHTML = 'Agregar nueva palabra';
+    newWordBtn.style.backgroundColor = '#9ea8ba';
     gameOver();
   } else if (rightAttempts == wordUpper.length) {
     id('result').innerHTML = 'GANASTE!! 🥳';
+
+    startBtn.innerHTML = 'Nuevo juego';
+    startBtn.style.backgroundColor = '#9c6b8a';
     gameOver();
   }
 }
