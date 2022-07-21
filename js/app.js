@@ -61,7 +61,7 @@ const cancelBtn = document.querySelector('.cancel');
 let newWordArea = document.getElementById('new-word-area');
 let mainArea = document.getElementById('main-area');
 
-// Call to action when user clicks "Iniciar Juego", the game starts!
+// Event listeners
 startBtn.addEventListener('click', startGame);
 giveUpBtn.addEventListener('click', giveUp);
 newWordBtn.addEventListener('click', showNewWordArea);
@@ -109,7 +109,7 @@ function startGame(event) {
   giveUpBtn.removeEventListener('click', showNewWordArea);
 }
 
-// Listening when the user clicks a letter
+// Listening when the user clicks a letter and calling the clickLetter function
 for (let i = 0; i < letterBtn.length; i++) {
   letterBtn[i].addEventListener('click', clickLetter);
 }
