@@ -1,8 +1,4 @@
 // Global variables
-
-let word;
-let wrongAttempts = 0;
-let rightAttempts = 0;
 let words = [
   'MAMA',
   'PAPA',
@@ -49,15 +45,29 @@ let words = [
   'MESSI',
 ];
 
+// localStorage.setItem('wordsArray', JSON.stringify(words));
+let word;
+let wrongAttempts = 0;
+let rightAttempts = 0;
+
 const startBtn = document.getElementById('start');
 const newWordBtn = document.querySelector('.new-word');
+const giveUpBtn = document.querySelector('.give-up');
 const hangmanImage = id('hangman-image');
 const letterBtn = document.querySelectorAll('#letters button');
 let paragraph;
+let inputTextContent = document.querySelector('.input-textarea');
+const saveAndStart = document.querySelector('.save');
+const cancelBtn = document.querySelector('.cancel');
+let newWordArea = document.getElementById('new-word-area');
+let mainArea = document.getElementById('main-area');
 
 // Call to action when user clicks "Iniciar Juego", the game starts!
 startBtn.addEventListener('click', startGame);
-newWordBtn.addEventListener('click', giveUp);
+giveUpBtn.addEventListener('click', giveUp);
+newWordBtn.addEventListener('click', showNewWordArea);
+saveAndStart.addEventListener('click', addNewWord);
+cancelBtn.addEventListener('click', cancel);
 
 // Function to look for an element by its Id
 function id(str) {
@@ -73,6 +83,8 @@ function startGame(event) {
   startBtn.style.backgroundColor = '#ad9da8';
   newWordBtn.innerHTML = 'Desistir';
   newWordBtn.style.backgroundColor = '#77719a';
+  newWordBtn.classList.add('give-up');
+  newWordBtn.classList.remove('new-word');
 
   wrongAttempts = 0;
   rightAttempts = 0;
@@ -93,14 +105,9 @@ function startGame(event) {
     const span = document.createElement('span');
     paragraph.appendChild(span);
   }
-}
 
-// Function to give up a game
-function giveUp(event) {
-  newWordBtn.innerHTML = 'Agregar nueva palabra';
-  startBtn.disabled = false;
-  startBtn.style.backgroundColor = '#9c6b8a';
-  paragraph.innerHTML = '';
+  giveUpBtn.style.display = 'inline';
+  giveUpBtn.removeEventListener('click', showNewWordArea);
 }
 
 // Listening when the user clicks a letter
@@ -145,14 +152,40 @@ function clickLetter(event) {
 
     newWordBtn.innerHTML = 'Agregar nueva palabra';
     newWordBtn.style.backgroundColor = '#9ea8ba';
+
+    giveUpBtn.style.display = 'none';
+
     gameOver();
   } else if (rightAttempts == wordUpper.length) {
     id('result').innerHTML = 'GANASTE!! 🥳';
 
     startBtn.innerHTML = 'Nuevo juego';
     startBtn.style.backgroundColor = '#9c6b8a';
+
+    giveUpBtn.style.display = 'none';
+
     gameOver();
   }
+}
+
+// Function to give up a game
+function giveUp() {
+  newWordArea.style.display = 'none';
+  mainArea.style.display = 'flex';
+  giveUpBtn.innerHTML = 'Agregar nueva palabra';
+  giveUpBtn.classList.add('new-word');
+  giveUpBtn.classList.remove('give-up');
+  startBtn.disabled = false;
+  startBtn.style.backgroundColor = '#9c6b8a';
+  startBtn.innerHTML = 'Iniciar juego';
+  paragraph = id('secret-word');
+  paragraph.innerHTML = '';
+
+  for (let i = 0; i < letterBtn.length; i++) {
+    letterBtn[i].disabled = true;
+  }
+
+  giveUpBtn.addEventListener('click', showNewWordArea);
 }
 
 // Function to enable/disable letters and Start button
@@ -162,12 +195,37 @@ function gameOver() {
   }
 
   startBtn.disabled = false;
+
+  let secretWord = document.getElementById('secret-word');
+  secretWord.innerHTML = '';
+
+  let wrongLetters = document.getElementById('wrong-letter');
+  wrongLetters.innerHTML = '';
 }
 
 gameOver();
 
 // Function to add a word to the words array
-// function addWord(str) {
+function showNewWordArea() {
+  inputTextContent = document.querySelector('.input-textarea');
+  inputTextContent.value = '';
+  mainArea.style.display = 'none';
+  newWordArea.style.display = 'inline';
+  newWordArea.style.margin = 'auto';
+}
 
-//   if(str === )
-// }
+function addNewWord() {
+  inputTextContent = inputTextContent.value.toUpperCase();
+
+  words.push(inputTextContent);
+
+  localStorage.setItem('wordsArray', JSON.stringify(words));
+
+  newWordArea.style.display = 'none';
+  mainArea.style.display = 'flex';
+}
+
+function cancel() {
+  newWordArea.style.display = 'none';
+  mainArea.style.display = 'flex';
+}
