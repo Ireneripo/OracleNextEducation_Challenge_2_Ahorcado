@@ -114,7 +114,7 @@ for (let i = 0; i < letterBtn.length; i++) {
   letterBtn[i].addEventListener('click', clickLetter);
 }
 
-// Call to action: fill the empty space if the letter is correct and update counter and image. Show a message at the end of the game
+// Fill the empty space if the letter is correct and update counter and image. Show a message at the end of the game
 function clickLetter(event) {
   const spans = document.querySelectorAll('#secret-word span');
   const button = event.target;
@@ -204,7 +204,7 @@ function gameOver() {
 
 gameOver();
 
-// Function to add a word to the words array
+// Functions to add a word to the words array
 function showNewWordArea() {
   inputTextContent = document.querySelector('.input-textarea');
   inputTextContent.value = '';
