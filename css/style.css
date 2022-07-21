@@ -18,11 +18,8 @@ main {
 
 #main-area {
   display: flex;
+  flex-wrap: wrap;
 }
-
-/* .hide-me {
-  display: none;
-} */
 
 #hangman-image {
   /* width: 400px; */
@@ -73,12 +70,6 @@ a {
   text-decoration: none;
   color: #ffffff;
 }
-
-/* .logo {
-  margin: 8px;
-  width: 100px;
-  height: auto;
-} */
 
 .main-buttons {
   width: 100%;
@@ -142,7 +133,6 @@ a {
 .cancel,
 .give-up {
   background-color: #9ea8ba;
-  /* display: none; */
 }
 
 #new-word-area {
@@ -182,6 +172,10 @@ a {
 @media screen and (min-width: 768px) {
   .input-textarea {
     width: 45%;
+  }
+
+  #main-area {
+    flex-wrap: nowrap;
   }
 
   .main-buttons-game,

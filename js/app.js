@@ -45,7 +45,6 @@ let words = [
   'MESSI',
 ];
 
-// localStorage.setItem('wordsArray', JSON.stringify(words));
 let word;
 let wrongAttempts = 0;
 let rightAttempts = 0;
